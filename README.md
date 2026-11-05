@@ -7,8 +7,12 @@ command-line tool for scripts and agents. It needs an Apple Silicon Mac with
 macOS 15 or later.
 
 ```sh
+brew trust --cask alron/llama-swap-mac-launcher/llama-swap-launcher
 brew install --cask alron/llama-swap-mac-launcher/llama-swap-launcher
 ```
+
+Homebrew loads a cask from a tap other than its own only once you've
+trusted it; the first line trusts this cask alone.
 
 This installs the app in `/Applications` and links `llsl` into Homebrew's
 `bin`. It's the same signed and notarized zip as on the project's
