@@ -27,11 +27,19 @@ cask "llama-swap-launcher" do
   # cask decides how 0.3.2 is upgraded.)
   uninstall signal: [["TERM", "com.my-wang.llama-swap-launcher"]]
 
-  zap trash: [
-    "~/Library/Application Support/com.my-wang.llama-swap-launcher",
-    "~/Library/Logs/com.my-wang.llama-swap-launcher",
-    "~/Library/Preferences/com.my-wang.llama-swap-launcher.plist",
-  ]
+  # The GPU memory limit's helper keeps its limit and log as root, so
+  # they're deleted with sudo. Only on zap: uninstall's directives also run
+  # on upgrade, and would erase the limit (and launchctl: would unload the
+  # helper) at every brew upgrade.
+  zap delete: [
+        "/Library/Application Support/com.my-wang.llama-swap-launcher.wired-limit",
+        "/Library/Logs/com.my-wang.llama-swap-launcher.wired-limit.log",
+      ],
+      trash:  [
+        "~/Library/Application Support/com.my-wang.llama-swap-launcher",
+        "~/Library/Logs/com.my-wang.llama-swap-launcher",
+        "~/Library/Preferences/com.my-wang.llama-swap-launcher.plist",
+      ]
 
   caveats <<~EOS
     llama-swap isn't included. Install it separately, for example:
@@ -43,5 +51,10 @@ cask "llama-swap-launcher" do
     into the new version once llama-swap is idle (Settings → Tweaks:
     Restart on update). Upgrading from 0.3.2, it quits instead: open it
     again once.
+
+    If you raised the GPU's memory limit (Settings → Tweaks), untick it
+    before uninstalling: that returns macOS's default and removes the
+    app's helper. If you forgot, install the app again, untick, Save,
+    then uninstall.
   EOS
 end

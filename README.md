@@ -28,7 +28,12 @@ brew install mostlygeek/llama-swap/llama-swap
 into the new version once llama-swap has no requests in flight (Settings →
 Tweaks: Restart on update). Upgrading from 0.3.2, the app quits instead;
 open it again once. `brew uninstall` quits it, which stops llama-swap
-first; `brew uninstall --zap` also removes its settings and logs.
+first; `brew uninstall --zap` also removes its settings and logs, and asks
+for your password to remove the GPU memory limit's files, which are root's.
+If you raised that limit (Settings → Tweaks), untick it before
+uninstalling: that returns macOS's default and removes the app's helper.
+If you forgot, install the app again, untick, Save, then uninstall. Your
+API keys stay in your login keychain; Keychain Access can delete them.
 
 If you installed the app from a zip before, `--adopt` lets Homebrew take
 over that copy, when it's the same version as the cask:
