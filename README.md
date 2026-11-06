@@ -24,8 +24,11 @@ llama-swap isn't included. Install it separately, for example:
 brew install mostlygeek/llama-swap/llama-swap
 ```
 
-`brew upgrade` quits the app, which stops llama-swap first; open it again
-afterwards. `brew uninstall --zap` also removes its settings and logs.
+`brew upgrade` replaces the app while it runs, and the app restarts itself
+into the new version once llama-swap has no requests in flight (Settings →
+Tweaks: Restart on update). Upgrading from 0.3.2, the app quits instead;
+open it again once. `brew uninstall` quits it, which stops llama-swap
+first; `brew uninstall --zap` also removes its settings and logs.
 
 If you installed the app from a zip before, `--adopt` lets Homebrew take
 over that copy, when it's the same version as the cask:
