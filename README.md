@@ -24,6 +24,11 @@ llama-swap isn't included. Install it separately, for example:
 brew install mostlygeek/llama-swap/llama-swap
 ```
 
+The first time a new install opens, macOS asks once whether to open an
+app downloaded from the internet, saying Apple checked it for malicious
+software: click Open. Upgrades don't ask, since Homebrew passes the
+approval on.
+
 `brew upgrade` replaces the app while it runs, and the app restarts itself
 into the new version once llama-swap has no requests in flight (Settings →
 Tweaks: Restart on update). Upgrading from 0.3.2, the app quits instead;
@@ -41,6 +46,11 @@ over that copy, when it's the same version as the cask:
 ```sh
 brew install --cask --adopt alron/llama-swap-mac-launcher/llama-swap-launcher
 ```
+
+If it's an older version, Homebrew won't replace it: quit it, move it to
+the Trash, then install as above. Your settings, logs, keychain items and
+the Local Network permission carry over, as they belong to the app's
+bundle ID and its developer, not to the copy.
 
 ## Problems and security
 
