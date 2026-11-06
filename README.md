@@ -41,3 +41,17 @@ over that copy, when it's the same version as the cask:
 ```sh
 brew install --cask --adopt alron/llama-swap-mac-launcher/llama-swap-launcher
 ```
+
+## Problems and security
+
+This tap only holds the cask. Report problems, with the app or with
+installing it through Homebrew, in the project's
+[issues](https://github.com/alron/llama-swap-mac-launcher/issues), and
+vulnerabilities as its
+[SECURITY.md](https://github.com/alron/llama-swap-mac-launcher/blob/main/SECURITY.md)
+says.
+
+## License
+
+The cask and this README are under the MIT License, as the app is; see
+[LICENSE](LICENSE).
