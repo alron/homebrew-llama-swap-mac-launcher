@@ -1,6 +1,6 @@
 cask "llama-swap-launcher" do
-  version "0.3.4"
-  sha256 "206d1640296a203cf62595adbebc3e52d276f0f05fcf19c0461d30d970771845"
+  version "0.3.5"
+  sha256 "cf9931467b9d7a21be82e74b109c2c59eed46725b0995abed2e35a80a7b4ac26"
 
   url "https://github.com/alron/llama-swap-mac-launcher/releases/download/v#{version}/Llama-Swap-Launcher-#{version}.zip"
   name "Llama Swap Launcher"
