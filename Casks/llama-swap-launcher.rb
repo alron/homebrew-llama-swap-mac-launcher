@@ -56,5 +56,8 @@ cask "llama-swap-launcher" do
     before uninstalling: that returns macOS's default and removes the
     app's helper. If you forgot, no harm is done: macOS's default
     returns when the Mac restarts, and --zap removes the helper's file.
+
+    Everything the app leaves, and how to remove it:
+      https://github.com/alron/llama-swap-mac-launcher#uninstalling
   EOS
 end

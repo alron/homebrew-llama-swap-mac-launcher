@@ -40,7 +40,9 @@ uninstalling: that returns macOS's default and removes the app's helper.
 If you forgot, no harm is done: macOS drops the helper once the app is
 gone, and its default returns when the Mac restarts; only the helper's file
 with the limit stays, which `--zap` removes. Your API keys stay in your
-login keychain; Keychain Access can delete them.
+login keychain; Keychain Access can delete them. Everything the app leaves,
+and how to remove it, is in the main README's
+[Uninstalling](https://github.com/alron/llama-swap-mac-launcher#uninstalling).
 
 If you installed the app from a zip before, `--adopt` lets Homebrew take
 over that copy, when it's the same version as the cask:
